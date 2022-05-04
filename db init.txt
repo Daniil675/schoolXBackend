@@ -1,0 +1,25 @@
+CREATE TABLE City (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Name VARCHAR NOT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE City
+(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR(255)
+);
+
+CREATE TABLE Users
+(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  Name VARCHAR(255),
+  Email VARCHAR(255),
+  Phone VARCHAR(15),
+  City_id INT
+);
+
+id - Идентификатор пользователя должен быть первичным ключом;
+Name - имя пользователя;
+Email - электронная почта;
+Phone - номер телефона;
+City_id - идентификатор города к которому привяза пользователь;
