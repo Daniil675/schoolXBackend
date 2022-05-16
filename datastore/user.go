@@ -1,18 +1,18 @@
-package main
+package datastore
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func UsersGetAllById(id int) []User {
+const usersTable = "Users"
+
+func UsersGetAllByCityId(id int) []User {
 	var entities []User
 
 	//rows, err := db.Query("SELECT * FROM Users")
-	stmt, err := db.Prepare("SELECT * FROM Users WHERE City_id=?")
+	stmt, err := db.Prepare(fmt.Sprintf("SELECT * FROM %s WHERE City_id=?", usersTable))
 	if err != nil {
 		fmt.Println(err)
 	}
-	
+
 	rows, err := stmt.Query(id)
 	if err != nil {
 		fmt.Println(err)
